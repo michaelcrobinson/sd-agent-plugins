@@ -49,7 +49,7 @@ nagiosPluginsCommandLines = [
     "/usr/local/src/check_pgactivity/check_pgactivity --username " + pg_user + " --dbname " + pg_dbname + " -s last_vacuum  -w " + pg_lastvac_warn + " -c " + pg_lastvac_crit,
     "/usr/local/src/check_pgactivity/check_pgactivity --username " + pg_user + " --dbname " + pg_dbname + " -s last_analyze  -w " + pg_lastvac_warn + " -c " + pg_lastvac_crit,
     "/usr/local/src/check_pgactivity/check_pgactivity --username " + pg_user + " --dbname " + pg_dbname + " -s oldest_idlexact  -w " + pg_idle_warn + " -c " + pg_idle_crit,
-    "/usr/local/src/check_pgactivity/check_pgactivity --username " + pg_user + " --dbname " + pg_dbname + " -s backends -w " + pg_backend_warn + " -c " pg_backend_crit,
+    "/usr/local/src/check_pgactivity/check_pgactivity --username " + pg_user + " --dbname " + pg_dbname + " -s backends -w " + pg_backend_warn + " -c " + pg_backend_crit,
     "/usr/local/src/check_pgactivity/check_pgactivity --username " + pg_user + " --dbname " + pg_dbname + " -s backends_status"
 ]
 
