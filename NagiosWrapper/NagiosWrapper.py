@@ -23,8 +23,8 @@ pg_idle_warn = os.getenv('PG_IDLE_WARNING', "1KB")
 pg_idle_crit = os.getenv('PG_IDLE_CRITICAL', "1024KB")
 
 # express in count; warn should be above average or half of max, crit a bit below max connections
-pg_backend_warn = os.getenv('PG_BACKEND_WARNING', 250)
-pg_backend_crit = os.getenv('PG_BACKEND_CRITICAL', 475)
+pg_backend_warn = os.getenv('PG_BACKEND_WARNING', "250")
+pg_backend_crit = os.getenv('PG_BACKEND_CRITICAL', "475")
 
 ###############################################
 # This command list includes the following checks:
