@@ -4,27 +4,27 @@
 import subprocess
 import os
 
-pg_dbname = os.environ.get('POSTGRESQL_DATABASE')
-pg_user = os.environ.get('POSTGRESQL_USERNAME')
+pg_dbname = os.getenv('POSTGRESQL_DATABASE', "hub")
+pg_user = os.getenv('POSTGRESQL_USERNAME', "postgres")
 
 # Need warning and critical thresholds for each type of check
 
 # This can be shared with table and btree bloat thresholds, express in %
-pg_bloat_warn = os.environ.get('PG_TABLEBLOAT_WARNING')
-pg_bloat_crit = os.environ.get('PG_TABLEBLOAT_CRITICAL')
+pg_bloat_warn = os.getenv('PG_TABLEBLOAT_WARNING', "50%")
+pg_bloat_crit = os.getenv('PG_TABLEBLOAT_CRITICAL', "75%")
 
 
 # this can be shared with Last Vacuum and Last Analyze thresholds, express in time (s, M, H)
-pg_lastvac_warn = os.environ.get('PG_LASTVACUUM_WARNING')
-pg_lastvac_crit = os.environ.get('PG_LASTVACUUM_CRITICAL')
+pg_lastvac_warn = os.getenv('PG_LASTVACUUM_WARNING', "10s")
+pg_lastvac_crit = os.getenv('PG_LASTVACUUM_CRITICAL', "30s")
 
 # express in size (B, KB, MB)
-pg_idle_warn = os.environ.get('PG_IDLE_WARNING')
-pg_idle_crit = os.environ.get('PG_IDLE_CRITICAL')
+pg_idle_warn = os.getenv('PG_IDLE_WARNING', "1KB")
+pg_idle_crit = os.getenv('PG_IDLE_CRITICAL', "1024KB")
 
 # express in count; warn should be above average or half of max, crit a bit below max connections
-pg_backend_warn = os.environ.get('PG_BACKEND_WARNING')
-pg_backend_crit = os.environ.get('PG_BACKEND_CRITICAL')
+pg_backend_warn = os.getenv('PG_BACKEND_WARNING', 250)
+pg_backend_crit = os.getenv('PG_BACKEND_CRITICAL', 475)
 
 ###############################################
 # This command list includes the following checks:
